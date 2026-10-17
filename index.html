@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#e9232d">
+<title>Cadastro de Membros | Alto Amor ao Próximo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><img src="logotipo.jpg" alt="Logotipo da associação"><div><strong>ALTO AMOR AO PRÓXIMO</strong><span>Mãos Solidárias Para Sempre</span></div></div>
+  <a class="contact" href="mailto:altoamoraoproximo@gmail.com">Contactar associação</a>
+</header>
+<main>
+  <section class="hero">
+    <div class="pill">♥ Solidariedade • União • Serviço</div>
+    <h1>Faça parte da nossa<br><em>família solidária.</em></h1>
+    <p>Preencha a ficha de cadastro de membro. No final, poderá guardar os dados neste dispositivo e descarregar a sua ficha em PDF.</p>
+    <div class="hero-contact"><span>☎ +258 87 100 0080</span><span>☎ +258 84 828 0452</span></div>
+  </section>
+  <section class="form-card">
+    <div class="form-heading"><div><span class="eyebrow">INSCRIÇÃO DE MEMBRO</span><h2>Ficha de cadastro</h2></div><span class="step">01 / 05</span></div>
+    <div class="notice">Os campos com <b>*</b> são obrigatórios. Preencha os dados com atenção.</div>
+    <form id="memberForm">
+      <h3><span>01</span> Dados do membro</h3>
+      <div class="grid">
+        <label class="wide">Nome completo *<input name="nome" required autocomplete="name" pattern="[A-Za-zÀ-ÿ\s'-]+" title="Introduza apenas letras e espaços." placeholder="Ex.: Amélia José Macuácua"></label>
+        <label>Data de nascimento *<input name="nascimento" type="date" required></label>
+        <label>BI / Documento *<input name="documento" required minlength="5" maxlength="30" placeholder="Número do documento"></label>
+        <label>Telefone / WhatsApp *<input name="telefone" required type="tel" inputmode="tel" pattern="[0-9+() \-]{9,20}" placeholder="+258 8X XXX XXXX"></label>
+        <label>E-mail<input name="email" type="email" autocomplete="email" placeholder="nome@email.com"></label>
+        <label class="wide">Bairro / Cidade *<input name="localidade" required placeholder="Ex.: Muhala, Nampula"></label>
+      </div>
+      <h3><span>02</span> Participação na associação</h3>
+      <div class="grid">
+        <label>Área de interesse *<input name="interesse" required placeholder="Área em que gostaria de participar"></label>
+        <label>Função / Cargo<input name="cargo" placeholder="Se aplicável"></label>
+        <label>Profissão / Ocupação<input name="profissao" placeholder="A sua ocupação"></label>
+        <fieldset><legend>Disponibilidade *</legend><label class="choice"><input type="radio" name="disponibilidade" value="Sim" required> Sim</label><label class="choice"><input type="radio" name="disponibilidade" value="Não"> Não</label></fieldset>
+      </div>
+      <h3><span>03</span> Área de contribuição</h3>
+      <div class="checks">
+        <label><input type="checkbox" name="contribuicao" value="Cultura"> Cultura</label>
+        <label><input type="checkbox" name="contribuicao" value="Média"> Média</label>
+        <label><input type="checkbox" name="contribuicao" value="Eventos"> Eventos</label>
+        <label><input type="checkbox" name="contribuicao" value="Projectos Sociais"> Projectos Sociais</label>
+        <label><input type="checkbox" name="contribuicao" value="Gestão/Finanças"> Gestão/Finanças</label>
+        <label><input type="checkbox" name="contribuicao" value="Comunicação"> Comunicação</label>
+        <label class="other">Outra: <input name="outra" placeholder="Especifique"></label>
+      </div>
+      <h3><span>04</span> Motivo de integrar na associação</h3>
+      <label class="wide">Conte-nos por que deseja fazer parte <textarea name="motivo" required minlength="5" rows="4" placeholder="Escreva aqui a sua motivação..."></textarea></label>
+      <div class="declaration"><strong>Declaração</strong><p>Declaro que as informações fornecidas são verdadeiras e comprometo-me a respeitar os estatutos, normas e princípios da associação.</p><label class="choice"><input type="checkbox" name="declaracao" required> Confirmo a declaração acima.</label></div>
+      <div class="actions"><button class="primary" type="submit">Guardar cadastro</button><button class="secondary" id="resetBtn" type="reset">Limpar formulário</button></div>
+    </form>
+    <div id="success" class="success" hidden><div class="success-icon">✓</div><div><h3>Ficha preparada!</h3><p>Os dados foram guardados neste dispositivo. Descarregue a ficha em PDF.</p><button id="pdfBtn" class="primary">↓ Baixar ficha em PDF</button></div></div>
+  </section>
+  <section class="admin-card"><div><span class="eyebrow">ÁREA RESTRITA</span><h2>Administração</h2><p>A área administrativa será ativada com autenticação segura no serviço de base de dados.</p></div><button id="adminInfo" class="secondary">Sobre o acesso</button><p id="adminMsg" class="small" hidden>Por segurança, não incluí códigos secretos num site público: no GitHub Pages, qualquer senha guardada no JavaScript pode ser vista. A versão de produção precisa de autenticação no servidor e permissões para exatamente dois utilizadores.</p></section>
+</main>
+<footer><img src="logotipo.jpg" alt=""><div><strong>Alto Amor ao Próximo – Mãos Solidárias Para Sempre</strong><span>altoamoraoproximo@gmail.com</span></div><small>© <span id="year"></span> • Todos os direitos reservados</small></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script><script src="script.js"></script>
+</body></html>
